@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="icon" href="assets/svg/panda origami.svg" />
+    <link rel="stylesheet" href="assets/bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/quiz.css" />
+    <script src="js/quiz.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>Quiz</h1>
+      </div>
+      <nav>
+        <a href="question_number.html" title="Back"
+          ><li><i class="bi-arrow-left"></i></li
+        ></a>
+        <a href="index.html" title="Periodic Table"
+          ><li><i class="bi-house-door-fill"></i></li
+        ></a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="question"></div>
+        <div class="answers"></div>
+      </div>
+
+      <div class="score-container">
+        <div>
+          Correct:
+          <span class="correct-score"
+            ><span id="correctQuestions">0 </span
+            ><span id="totalQuestions">/0</span></span
+          >
+        </div>
+        <div>Wrong: <span class="wrong-score">0</span></div>
+      </div>
+
+      <div class="timer"></div>
+      <!-- Timer Element -->
+
+      <button class="skip-button" style="display: none">Skip</button>
+    </main>
+  </body>
+</html>

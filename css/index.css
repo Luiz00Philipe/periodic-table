@@ -1,0 +1,372 @@
+/* ==========  General  ========== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-color: #141520;
+  --gap: 7px;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--body-color);
+  color: #f9f9f9;
+}
+
+a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* ==========  Category  ========== */
+
+main .category-container {
+  position: fixed;
+  top: var(--header-height);
+  height: calc(100vh - var(--header-height));
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  display: none;
+}
+
+main .category-container .category-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background-color: var(--body-color);
+  width: 30rem;
+  height: 22rem;
+  z-index: 100;
+  border-radius: 1rem;
+  padding: 15px 20px;
+  overflow: hidden;
+}
+
+.category-container .close-category {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: #f9f9f9;
+  border: none;
+  border-radius: 2px;
+  padding: 2px;
+  font-size: 1.5rem;
+  color: #f17d68;
+}
+
+.category-container h2 {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.category-container .category-card .categories {
+  margin-left: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.category-container .category-card .categories .category {
+  position: relative;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  transition: all 0.375s;
+  padding: 2px 0;
+  text-indent: 10px;
+  height: 2rem;
+  width: 10rem;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.category-container .category-card .categories .category:before {
+  content: '';
+  position: absolute;
+  right: 102%;
+  top: 50%;
+  translate: 0 -50%;
+  aspect-ratio: 1;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.category-container .category-card .categories .noble-gas:hover {
+  color: #ff0000;
+}
+.category-container .category-card .categories .halogen:hover {
+  color: #54aaff;
+}
+.category-container .category-card .categories .alkali:hover {
+  color: #9c38ff;
+}
+.category-container .category-card .categories .lanthanoid:hover {
+  color: #ffff00;
+}
+.category-container .category-card .categories .actinoid:hover {
+  color: #ffae00;
+}
+.category-container .category-card .categories .alkaline-earth:hover {
+  color: #6200ff;
+}
+.category-container .category-card .categories .transition-metal:hover {
+  color: #00ff00;
+}
+.category-container .category-card .categories .super-actinoid:hover {
+  color: #ffffff;
+}
+.category-container .category-card .categories .nonmetal:hover {
+  color: #ff00ff;
+}
+.category-container .category-card .categories .metal:hover {
+  color: #00ffff;
+}
+
+.category-container .category-card .categories .all::before {
+  background: linear-gradient(45deg, lime, dodgerblue);
+}
+.category-container .category-card .categories .noble-gas::before {
+  background-color: #ff0000;
+}
+.category-container .category-card .categories .halogen::before {
+  background-color: #54aaff;
+}
+.category-container .category-card .categories .alkali::before {
+  background-color: #9c38ff;
+}
+.category-container .category-card .categories .lanthanoid::before {
+  background-color: #ffff00;
+}
+.category-container .category-card .categories .actinoid::before {
+  background-color: #ffae00;
+}
+.category-container .category-card .categories .alkaline-earth::before {
+  background-color: #6200ff;
+}
+.category-container .category-card .categories .transition-metal::before {
+  background-color: #00ff00;
+}
+.category-container .category-card .categories .super-actinoid::before {
+  background-color: #ffffff;
+}
+.category-container .category-card .categories .nonmetal::before {
+  background-color: #ff00ff;
+}
+.category-container .category-card .categories .metal::before {
+  background-color: #00ffff;
+}
+
+/* ==========  Actual Code  ========== */
+
+main {
+  display: flex;
+  padding: 2rem 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.container .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.container .row .element {
+  position: relative;
+  aspect-ratio: 1/1;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.375s;
+  background-color: transparent;
+}
+
+.container .row .element:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container .row .element::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 1rem;
+}
+
+.container .row .noble-gas::after {
+  background-color: #ff0000;
+}
+.container .row .halogen::after {
+  background-color: #54aaff;
+}
+.container .row .alkali::after {
+  background-color: #9c38ff;
+}
+.container .row .lanthanoid::after {
+  background-color: #ffff00;
+}
+.container .row .actinoid::after {
+  background-color: #ffae00;
+}
+.container .row .alkaline-earth::after {
+  background-color: #6200ff;
+}
+.container .row .super-actinoid::after {
+  background-color: #ffffff;
+}
+.container .row .nonmetal::after {
+  background-color: #ff00ff;
+}
+.container .row .metal::after {
+  background-color: #00ffff;
+}
+.container .row .transition-metal::after {
+  background-color: #00ff00;
+}
+.container .row .element-range::after {
+  background-color: #00ff00;
+}
+
+.container .row .null {
+  background: transparent !important;
+  background-color: transparent !important;
+  cursor: auto !important;
+  &:hover {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+  &::after {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+}
+
+.container .row .element .number {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  font-size: 10px;
+  color: #cccccc;
+}
+
+.container .row .element .symbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  font-size: 1.5rem;
+}
+
+.container .row .element .name {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  translate: -50% 0;
+  font-size: 10px;
+  color: #dddddd;
+}
+
+.container .row .element .num-range {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 45rem) {
+  .container .row .element {
+    height: 3.25rem;
+  }
+  .container .row .element .symbol {
+    font-size: 1.2rem;
+  }
+  .container .row .element .name,
+  .container .row .element .number,
+  .container .row .element .num-range {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 33rem) {
+  main .category-container .category-card {
+    width: 25rem;
+  }
+}
+@media screen and (max-width: 27rem) {
+  main .category-container .category-card {
+    width: 22rem;
+  }
+  .category-container .category-card .categories .category {
+    text-indent: 0;
+  }
+  .category-container .category-card .categories .category::before {
+    display: none;
+  }
+}
+
+/* Dark mode */
+
+.darkmode {
+  --body-color: #eeeeee;
+  color: #000;
+}
+
+.darkmode .container .element .number,
+.darkmode .container .element .name {
+  color: #333;
+}
+
+.darkmode header nav li {
+  color: #000;
+}
+
+.darkmode header #mode {
+  color: #000;
+}
+
+.darkmode .container .row .super-actinoid::after {
+  background-color: black;
+}
+
+.darkmode .container .row .element:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.darkmode .category-container .category-card .categories .super-actinoid {
+  border-color: #111;
+  &:hover {
+    color: #111;
+  }
+}
+.darkmode
+  .category-container
+  .category-card
+  .categories
+  .super-actinoid::before {
+  background-color: black;
+}

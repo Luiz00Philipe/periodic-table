@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Images</title>
+    <link rel="stylesheet" href="assets/bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/images.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <script src="js/images.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>Periodic Table</h1>
+      </div>
+      <nav>
+        <a href="index.html" title="Periodic Table"
+          ><li><i class="bi-house-door-fill"></i></li
+        ></a>
+        <a href="description.html" title="Description"
+          ><li><i class="bi-file-text-fill"></i></li
+        ></a>
+        <a href="question_number.html" title="Quiz"
+          ><li><i class="bi-check-circle-fill"></i></li
+        ></a>
+        <a href="more-tables.html" title="More tables"
+          ><li><i class="bi-grid-1x2-fill"></i></li
+        ></a>
+        <a href="about.html" title="About"
+          ><li><i class="bi-info-circle-fill"></i></li
+        ></a>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <div class="user-input">
+          <input
+            type="text"
+            id="elementName"
+            placeholder="Enter Element Name to fetch image"
+            autocomplete="off"
+            spellcheck="false"
+            autofocus
+          />
+          <button id="fetchButton">Fetch Image</button>
+          <div id="error"></div>
+        </div>
+        <div id="result"></div>
+      </div>
+    </main>
+  </body>
+</html>

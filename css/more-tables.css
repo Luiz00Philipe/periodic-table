@@ -1,0 +1,746 @@
+/* General */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-color: #141520;
+  --gap: 7px;
+  --footer-height: 2rem;
+}
+
+::-webkit-scrollbar {
+  background-color: #343540;
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #777;
+  border-radius: 1rem;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--body-color);
+  color: #f9f9f9;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* Main part */
+
+main {
+  position: relative;
+  margin-top: calc(var(--header-height) + var(--footer-height));
+  height: calc(100vh - (var(--header-height) + var(--footer-height)));
+}
+
+main .select-msg {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transition: all 0.375s;
+  cursor: pointer;
+  z-index: -1;
+}
+
+main .select-msg:hover {
+  color: #1972d2;
+}
+
+/* Solubility part */
+
+main .solubility {
+  background-color: var(--body-color);
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.375s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  overflow: scroll;
+}
+
+.solubility .column,
+.solubility .row {
+  position: absolute;
+  display: flex;
+  gap: 7px;
+  font-size: 0.8rem;
+}
+
+.solubility .column {
+  top: 2rem;
+  flex-direction: column;
+}
+.solubility .column .part {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.solubility .row {
+  left: 2.75rem;
+}
+.solubility .row .part {
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.solubility .column .part sub {
+  color: dodgerblue;
+}
+.solubility .column .part sup {
+  color: tomato;
+}
+
+.solubility .row .part sub {
+  color: dodgerblue;
+}
+.solubility .row .part sup {
+  color: tomato;
+}
+
+.solubility .container {
+  display: grid;
+  grid-template-columns: repeat(23, 1fr);
+  grid-template-rows: repeat(13, 1fr);
+  margin: 2rem 0 0 2.75rem;
+  width: max-content;
+  gap: 7px;
+}
+
+.solubility .container .box {
+  aspect-ratio: 1;
+  height: 3rem;
+  border: 1px solid;
+  border-radius: 10px;
+  transition: all 0.375s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.solubility .container .box:hover {
+  scale: 107%;
+}
+
+.solubility .container .i {
+  color: tomato;
+}
+.solubility .container .s {
+  color: lime;
+}
+.solubility .container .si {
+  color: yellow;
+}
+.solubility .container .dw {
+  color: dodgerblue;
+}
+
+/* Indicator part */
+
+main .indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+main .indicators .card {
+  position: relative;
+  background: linear-gradient(45deg, #242530, #545560);
+  padding: 10px;
+  height: 30rem;
+  width: 30rem;
+  border-radius: 10px;
+  display: none;
+  color: #fff;
+  transition: all 0.375s;
+  border: 2px solid transparent;
+}
+
+main .indicators .card:hover {
+  border: 2px solid;
+}
+
+main .indicators .card .description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.indicators .card .description .topic {
+  font-size: 2rem;
+}
+
+main .indicators .card .content {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  translate: -50% 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 1.1rem;
+}
+
+main .indicators .card .content div {
+  position: relative;
+  padding: 5px 10px;
+}
+
+main .indicators .card .content div::after {
+  content: attr(data-indicator);
+  position: absolute;
+  bottom: 85%;
+  left: 0;
+  font-size: 0.8rem;
+}
+
+.content div[data-indicator='Acid']::after {
+  color: tomato;
+}
+.content div[data-indicator='Neutral']::after {
+  color: yellow;
+}
+.content div[data-indicator='Base']::after {
+  color: dodgerblue;
+}
+
+main .indicators .card .logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+main .indicators .card .logo i {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.litmus .description {
+  background: linear-gradient(rgb(30, 144, 255), rgba(30, 144, 255, 0.3));
+}
+.pheno .description {
+  background: linear-gradient(rgb(154, 205, 50), rgba(154, 205, 50, 0.3));
+}
+.methyl .description {
+  background: linear-gradient(rgb(255, 99, 71), rgba(255, 99, 71, 0.3));
+}
+.universal .description {
+  background: linear-gradient(rgb(30, 230, 144), rgba(30, 230, 144, 0.3));
+}
+
+.indicators .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.indicators .buttons button {
+  border-radius: 5px;
+  background-color: transparent;
+  color: #f9f9f9;
+  font-size: 1.2rem;
+  border: 1px solid;
+  aspect-ratio: 1;
+  height: 3rem;
+  transition: all 0.375s;
+}
+
+.indicators .buttons button:hover {
+  transform: translateX(1rem);
+}
+
+main .indicators {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 0;
+  height: 0;
+  transition: all 0.375s;
+}
+
+main .indicators {
+  overflow: hidden;
+  background-color: var(--body-color);
+}
+
+/* Electron configuration part */
+
+main .electron-config {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--body-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 0;
+  height: 0;
+  transition: all 0.375s;
+  overflow-x: scroll;
+}
+
+.electron-config .container {
+  position: absolute;
+  top: 0;
+  display: flex;
+  gap: 4rem;
+  overflow-x: scroll;
+  width: 100%;
+  height: calc(100% - var(--footer-height));
+}
+
+.electron-config .container .card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.electron-config .container .card .box {
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.electron-config .container .card .row {
+  display: flex;
+  gap: 5px;
+}
+
+.electron-config .container .card .box {
+  aspect-ratio: 1;
+  height: 4rem;
+  border: 2px solid;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.375s;
+}
+
+.electron-config .container .card .box:hover {
+  transform: translateY(-7px);
+}
+
+.electron-config .container .nth1 .box {
+  color: tomato;
+  border-color: tomato;
+}
+.electron-config .container .nth2 .box {
+  color: lime;
+  border-color: lime;
+}
+.electron-config .container .nth3 .box {
+  color: dodgerblue;
+  border-color: dodgerblue;
+}
+
+.electron-config .container .nth4 .box {
+  color: #8855bb;
+  border-color: #8855bb;
+}
+
+.electron-config .container .nth1 .box:hover {
+  background-color: tomato;
+  color: #fff;
+}
+.electron-config .container .nth2 .box:hover {
+  background-color: lime;
+  color: #fff;
+}
+.electron-config .container .nth3 .box:hover {
+  background-color: dodgerblue;
+  color: #fff;
+}
+.electron-config .container .nth4 .box:hover {
+  background-color: #8855bb;
+  color: #fff;
+}
+
+.electron-config .container .card .note {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.electron-config .container .card .note h1 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.electron-config .container .card .note p {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.electron-config .container .card .note h2 {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Hydrocarbon part */
+
+main .hydrocarbons {
+  overflow: hidden;
+  background-color: var(--body-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 0;
+  height: 0;
+  transition: all 0.375s;
+  overflow-y: scroll;
+}
+
+main .hydrocarbons .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+}
+
+.hydrocarbons .container .card {
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.hydrocarbons .container .card .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 10px;
+}
+
+.hydrocarbons .container .card .content .logo {
+  aspect-ratio: 1;
+  height: 3rem;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.375s;
+}
+
+.hydrocarbons .container .card .logo:hover {
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+.hydrocarbons .container .card .content h1 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.hydrocarbons .container .card .pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hydrocarbons .container .card .pic img {
+  aspect-ratio: 1;
+  width: 50%;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: all 0.375s;
+  filter: hue-rotate(-25deg);
+}
+
+.hydrocarbons .container .card .pic img:hover {
+  border-color: #f9f9f9;
+}
+
+/* Alkaline part */
+
+main .alkalines {
+  overflow: hidden;
+  background-color: var(--body-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 0;
+  height: 0;
+  transition: all 0.375s;
+  overflow-y: scroll;
+}
+
+.alkalines .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(377px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem;
+}
+
+.alkalines .container .card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.alkalines .container .card .logo {
+  padding: 15px 10px;
+  border-bottom: 1px solid #999;
+}
+
+.alkalines .container .card .content .logo {
+  border: none;
+}
+
+.alkalines .container .card .logo .topic {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.alkalines .container .card .logo i {
+  font-size: 1rem;
+  transition: all 0.375s;
+}
+
+.alkalines .container .card .logo i:hover {
+  color: #1972d2;
+}
+
+.alkalines .container .card .logo .name {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.alkalines .container .card .logo .density {
+  text-indent: 3rem;
+  font-family: monospace, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+  color: #999;
+  cursor: pointer;
+  transition: all 0.375s;
+  white-space: nowrap;
+}
+
+.alkalines .container .card .logo .density:hover {
+  color: #d9d9d9;
+}
+
+.alkalines .container .card .content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.alkalines .container .card .content .logo i {
+  font-size: 3rem;
+  transition: all 0.375s;
+}
+
+.alkalines .container .card .content .logo i:hover {
+  color: tomato;
+}
+
+.alkalines .container .card .desc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alkalines .container .card .desc .melting {
+  color: tomato;
+  font-size: 1.3rem;
+}
+.alkalines .container .card .desc .boiling {
+  color: dodgerblue;
+  font-size: 1.3rem;
+}
+
+/* Showing and hiding tables */
+
+.show-indicator .indicators {
+  width: 100%;
+  height: 100%;
+}
+
+.show-electron-configuration .electron-config {
+  width: 100%;
+  height: 100%;
+}
+
+.show-hydrocarbon .hydrocarbons {
+  width: 100%;
+  height: 100%;
+}
+
+.show-alkaline .alkalines {
+  width: 100%;
+  height: 100%;
+}
+
+.show-solubility .solubility {
+  height: 100%;
+  width: 100%;
+}
+
+/* The footer menu thingie */
+
+footer {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--body-color);
+  height: var(--footer-height);
+}
+
+footer .part {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+  transition: all 0.375s;
+  cursor: pointer;
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+
+footer .part:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+footer .part svg {
+  aspect-ratio: 1;
+  height: 2rem;
+  fill: #f9f9f9;
+  transition: all 0.375s;
+}
+
+footer .part i {
+  font-size: 1.5rem;
+}
+
+footer .part h1 {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Dark mode */
+
+.darkmode {
+  --body-color: #cccccc;
+  color: #000;
+}
+
+.darkmode header nav li {
+  color: #000;
+}
+
+.darkmode header #mode {
+  color: #000;
+}
+
+.darkmode .buttons button {
+  color: #111;
+}
+
+.darkmode .hydrocarbons .container .card .logo:hover {
+  background-color: #111;
+  color: #f9f9f9;
+}
+
+.darkmode .hydrocarbons .container .card .pic img {
+  filter: invert();
+}
+
+.darkmode .hydrocarbons .container .card .pic img:hover {
+  border-color: #1972d2;
+}
+
+.darkmode footer .part svg {
+  fill: #111;
+}
+
+.darkmode .solubility .container .s {
+  color: green;
+}
+.darkmode .solubility .container .i {
+  color: red;
+}
+.darkmode .solubility .container .si {
+  color: #242530;
+}
+
+/* Media queries */
+
+@media screen and (max-height: 580px) {
+  main .indicators .card {
+    height: 25rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  footer svg,
+  footer i {
+    display: none;
+  }
+}
+@media screen and (max-width: 550px) {
+  footer .part h1 {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 430px) {
+  main .indicators .card {
+    width: 20rem;
+  }
+  main .indicators .card .content {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 350px) {
+  main .indicators {
+    flex-direction: column;
+  }
+  main .indicators .buttons {
+    flex-direction: row;
+  }
+  main .indicators .card .content {
+    font-size: 0.9rem;
+  }
+}

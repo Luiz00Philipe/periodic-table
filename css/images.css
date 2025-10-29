@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-color: #141520;
+  --gap: 7px;
+}
+
+input,
+button {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--body-color);
+  color: #f9f9f9;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100dvh - var(--header-height));
+}
+
+main .container {
+  display: flex;
+  gap: 3rem;
+  background-color: rgba(255, 255, 255, 0.07);
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+
+main .container .user-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: clamp(10rem, 15rem, 20rem);
+}
+
+main .container .user-input input {
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid;
+  font-size: 1.1rem;
+  color: #f9f9f9;
+  border-radius: 5px;
+}
+
+main .container .user-input button {
+  padding: 10px 15px;
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: all 0.375s;
+}
+
+main .container .user-input button:hover {
+  background-color: #1972d2;
+  border-color: #1972d2;
+}
+
+main .container .user-input #error {
+  padding: 10px 15px;
+  border: 1px solid red;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace, sans-serif;
+  display: none;
+  height: max-content;
+  margin: 1rem 0;
+  transition: all 0.375s;
+}
+
+main .container .user-input #error:hover {
+  background-color: rgba(255, 10, 10, 0.3);
+}
+
+main .container #result {
+  aspect-ratio: 1;
+  height: clamp(15rem, 20rem, 25rem);
+}
+
+main .container #result img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.darkmode {
+  --body-color: #cccccc;
+  color: #000;
+}
+
+.darkmode header nav li {
+  color: #000;
+}
+
+.darkmode header #mode {
+  color: #000;
+}
+
+.darkmode main .container {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.darkmode main .container .user-input input,
+.darkmode main .container .user-input button {
+  color: #111;
+}
+
+@media screen and (max-width: 665px) {
+  main .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  main .container .user-input input,
+  main .container .user-input button,
+  main .container .user-input #error {
+    flex: 1;
+  }
+  main .container #result {
+    height: clamp(12rem, 17rem, 22rem);
+  }
+}
