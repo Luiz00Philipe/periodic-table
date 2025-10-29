@@ -140,37 +140,37 @@ main .category-container .category-card {
 }
 
 .category-container .category-card .categories .all::before {
-  background: linear-gradient(45deg, lime, dodgerblue);
+  background: linear-gradient(45deg, #00ff66, #3399ff);
 }
 .category-container .category-card .categories .noble-gas::before {
-  background-color: #ff0000;
+  background-color: #ff1a4b;
 }
 .category-container .category-card .categories .halogen::before {
-  background-color: #54aaff;
+  background-color: #33cfff;
 }
 .category-container .category-card .categories .alkali::before {
-  background-color: #9c38ff;
+  background-color: #b84dff;
 }
 .category-container .category-card .categories .lanthanoid::before {
-  background-color: #ffff00;
+  background-color: #ffe94d;
 }
 .category-container .category-card .categories .actinoid::before {
-  background-color: #ffae00;
+  background-color: #ff9900;
 }
 .category-container .category-card .categories .alkaline-earth::before {
-  background-color: #6200ff;
+  background-color: #7f00ff;
 }
 .category-container .category-card .categories .transition-metal::before {
-  background-color: #00ff00;
+  background-color: #00ff66;
 }
 .category-container .category-card .categories .super-actinoid::before {
-  background-color: #ffffff;
+  background-color: #e0e0e0;
 }
 .category-container .category-card .categories .nonmetal::before {
-  background-color: #ff00ff;
+  background-color: #ff33cc;
 }
 .category-container .category-card .categories .metal::before {
-  background-color: #00ffff;
+  background-color: #00e6e6;
 }
 
 /* ==========  Actual Code  ========== */
