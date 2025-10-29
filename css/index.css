@@ -221,37 +221,37 @@ main {
 }
 
 .container .row .noble-gas::after {
-  background-color: #ff0000;
+  background-color: #ff1a4b;
 }
 .container .row .halogen::after {
-  background-color: #54aaff;
+  background-color: #33cfff;
 }
 .container .row .alkali::after {
-  background-color: #9c38ff;
+  background-color: #b84dff;
 }
 .container .row .lanthanoid::after {
-  background-color: #ffff00;
+  background-color: #ffe94d;
 }
 .container .row .actinoid::after {
-  background-color: #ffae00;
+  background-color: #ff9900;
 }
 .container .row .alkaline-earth::after {
-  background-color: #6200ff;
+  background-color: #7f00ff;
 }
 .container .row .super-actinoid::after {
-  background-color: #ffffff;
+  background-color: #e0e0e0;
 }
 .container .row .nonmetal::after {
-  background-color: #ff00ff;
+  background-color: #ff33cc;
 }
 .container .row .metal::after {
-  background-color: #00ffff;
+  background-color: #00e6e6;
 }
 .container .row .transition-metal::after {
-  background-color: #00ff00;
+  background-color: #00ff66;
 }
 .container .row .element-range::after {
-  background-color: #00ff00;
+  background-color: #00ff66;
 }
 
 .container .row .null {
